@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<head>
+	<title>page layout</title>
+    <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: arial;
+		}
+		
+		nav {
+			float: left;
+			border: 1px solid black ;
+			background-color: #87cefa;
+			display:block;
+			width: 200px;
+		    float: left;
+			padding: 5px;
+			font-size: 15px;
+			height: 800px;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+		ul li a{
+			text-decoration-style: none;
+			color: black;
+			font-size: 14px;
+			display: block;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			text-align: center; 
+			border-bottom: 1px solid white; 
+
+
+		}
+		ul li a:hover{
+			color: white;
+		}
+		section{
+			display:inline-block;
+			width: 800px;
+		    float: left;
+			padding: 20px;
+			font-size: 15px;
+
+		}
+
+		   .content{
+            height: 700px;
+            overflow: hidden;
+            padding-top:20px;
+        }
+
+            .clr {
+            color: black;
+        }
+
+        .content input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            color: rgb(7, 7, 7);
+            width: 60%;
+            height: 30px;
+        }
+
+        .profile {
+				  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+				  max-width: 300px;
+				  margin: auto;
+				  text-align: center;
+				  font-family: arial;
+				}
+
+        .icon-container {
+				  margin-bottom: 20px;
+				  padding: 7px 0;
+				  font-size: 24px;
+		
+       
+        @media(max-width: 800px){
+        .content{
+                width: 100%;
+                margin-left: 0%;
+                margin-top: 0%;
+                height: 450px;
+        }
+    }
+
+
+	</style>
+</head>
+<body>
+	
+	<nav>
+		<ul>
+		    <li><a href="#profile">Profile</a></li>
+			<li><a href="#orders">My Orders</a></li>
+			<li><a href="#settings">Personal Infromation </a></li>
+			<li><a href="#address">Adderss </a></li>
+			<li><a href="#payments">Payments </a></li>
+		</ul>
+	</nav>
+	<section class="content" >
+        <h3 id="profile" style="text-align: center; width:100%">Profile</h3>
+        <div class="profile">
+         <input type='file' onchange="readURL(this);" />
+            <img id="blah" src="#" alt="your image" />
+            <h3>USER NAME</h3>
+						<script type="text/javascript">
+						function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        </script>
+        
+        
+
+		</div>
+
+
+		<h3 id="orders" style="text-align: center; width:100%">Orders</h3><div>
+			
+		</div>
+		
+		<h3 id="settings" style="text-align: center; width:100%">Personal Information</h3>
+                     <div style="padding-top: 10px;padding-left: 17%">
+                        <div style="width: 100%; padding-bottom: 10px">
+                         <label class="clr"><strong><i class="glyphicon glyphicon-user"></i> Name</strong></label><br>
+	                    <input type="text" placeholder="Name" name="fname" id="fname" style="width: 70%;height:4%">
+                    </div>
+                    <div style="width: 100%; padding-bottom: 10px">
+                        <label class="clr"><strong><i class="glyphicon glyphicon-user"></i> Lastname</strong></label><br>
+                        <input type="text" placeholder="LastName" name="lname" id="lname" style="width: 70%;height:4%">
+                    </div>
+
+                    <div style="width: 100%; padding-bottom: 10px">
+                        <label class="clr"><strong><i class="glyphicon glyphicon-envelope"></i> Email</strong></label><br>
+                        <input type="email" placeholder="Email" name="username" id="username" style="height:4%;width: 70%">
+                    </div>
+                     <div style="width: 100%; padding-bottom: 10px"><label class="clr"><strong><i class="fa fa-lg fa-phone"></i> Mobile</strong></label><br>
+                        <input type="number" placeholder="Mobile" id="phonenumber" name="phonenumber" style="width:70%;height=4%">
+                        </div>
+                     <button id="update" onclick="purasubmit()" style=" border-radius: 10px; bottom: 77px;background-color: #81ACEB;color: white">Update</button>
+
+		<h3 id="address" style="text-align: center; width:100%">Address</h3>
+                    <div style="width: 100%; padding-bottom: 10px">
+                        <label class="clr"><strong>Address Line 1</strong></label><br>
+                        <input type="text" placeholder="Address Line 1" style="width: 70%;height:4%">
+                    </div>
+
+                    <div style="width: 100%; padding-bottom: 10px">
+                        <label class="clr"><strong>Address Line 2</strong></label><br>
+                        <input type="text" placeholder="Address Line 2" style="width: 70%;height:4%">
+                    </div>
+                    
+                    <div style="width: 100%; padding-bottom: 10px">
+                        <label class="clr"><strong>City</strong></label><br>
+                        <input type="text" placeholder="City" style="width: 70%;height:4%">
+                    </div>          
+                     
+                     <div style="width: 100%; padding-bottom: 10px">
+                        <label class="clr"><strong>State</strong></label><br>
+                        <input type="text" placeholder="state" style="width: 70%;height:4%">
+                    </div>
+                    
+                    <div style="width: 100%; padding-bottom: 10px">
+                        <label class="clr"><strong>Post Code</strong></label><br>
+                        <input type="text" placeholder="postcode" style="width: 70%;height:4%">
+                    </div>
+
+                    <div style="width: 100%; padding-bottom: 10px">
+                        <label class="clr"><strong>Country</strong></label><br>
+                        <input type="text" placeholder="country" style="width: 70%;height:4%">
+                    </div>
+          
+              <button id="cancel" onclick="purasubmit()" style=" border-radius: 10px; bottom: 77px;background-color: #81ACEB;color: white">Cancel</button>               
+               <button id="save" onclick="purasubmit()" style=" border-radius: 10px; bottom: 77px;background-color: #81ACEB;color: white">Save</button>
+                             
+           
+
+		<h3 id="payments" style="text-align: center; width:100%">Payments</h3>
+		<div>
+			            
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+                     <div style="width: 100%; padding-bottom: 10px">
+                      <label class="clr"><strong><i class="fa fa-lg fa-user-o"></i>Name on Card</strong></label><br>
+                      <input type="text" placeholder="USER NAME" style="width: 70%;height:4%">
+                    </div>
+                    <div style="width: 100%; padding-bottom: 10px">
+                    <label class="clr"><strong><i class="fa fa-lg fa-user-o"></i>Card number</strong></label><br>
+                    <input type="text" placeholder="1111-2222-3333-4444" style="width: 70%;height:4%">
+                    </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      
+		</div>
+	</section>
+	
+</body>
