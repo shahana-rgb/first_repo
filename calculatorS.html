@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>Exp No 3 - Creating animation using Javascript in HTML </title>
+		
+	<link rel="stylesheet"
+		 href="css/mystyle.css" type="text/css" >
+	
+	
+	</head>
+	<body>
+	<div id="header">
+	<img class="logo" src="img/Logo.png"  alt="AIKTC" /> 
+	<h2 class="headerlogo"> Web Technology Laboratory </h2>
+	<br/>
+		<nav>
+		<ul>
+			<li><a href="index.html" target="_self"> Home </a></li>
+			<li><a href="about.html" target="_self"> About </a></li>	
+			<li><a href="html.html"> HTML </a></li>
+			<li><a href="css.html"> CSS </a> </li>
+			<li><a href="javascript.html"> Javascript </a></li>
+			<li><a href="contact.html"> Contact </a> </li>
+		</ul>
+		</nav>
+	</div>
+	<div id="content">
+		<div id="leftcolumn"> Javascript </div>
+
+		<div id="rightcolumn"> 
+		<p id="demo"> </p>
+		<p id="demo1"> </p>
+		<p id="demo2"> </p>
+		<input type="text" id="num1">
+		
+		<input type="text" id="num2">
+
+		<button type="button" onclick ="calculate()">Calculate</button>
+
+		<h4 id="demo3"> </h4>
+		<h4 id="demo4"> </h4>
+		<h4 id="demo5"> </h4>
+		<h4 id="demo6"> </h4>
+
+		<script type="text/javascript">
+	function calculate()
+	{
+
+	document.getElementById('demo').innerHTML = Date();
+
+	document.getElementById('demo1').innerHTML = "Shahana Khan";
+
+	document.getElementById('demo2').innerHTML = 100;
+
+	var x, y;
+	x = parseInt(document.getElementById('num1').value);
+	y = parseInt(document.getElementById('num2').value);
+
+	document.getElementById('demo3').innerHTML = ("Addition  "+ (x + y) );
+
+	document.getElementById('demo4').innerHTML = ("Subtraction  "+ (x - y) );
+
+	document.getElementById('demo5').innerHTML = ("Multiplication  "+ (x * y) );
+
+	document.getElementById('demo6').innerHTML = ("Division  "+ (x / y) );
+
+	}
+		</script>
+
+		
+		</div>
+
+	</div>
+	<div id="footer">Developed by Shahana Khan</div>
+	</body>
+</html>
+
